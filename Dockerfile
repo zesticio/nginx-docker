@@ -36,6 +36,3 @@ COPY ./ssl-params.conf /etc/nginx/ssl-params.conf
 
 # Expose the port for access
 EXPOSE 80 443
-
-# Run the Nginx server
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
