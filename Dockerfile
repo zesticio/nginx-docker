@@ -23,7 +23,7 @@ RUN apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 RUN echo "We can create a self-signed key and certificate pair with OpenSSL in a single command"
-RUN sudo openssl req \
+RUN openssl req \
         -newkey rsa:4096 \
         -x509 \
         -nodes \
@@ -32,7 +32,7 @@ RUN sudo openssl req \
         -out /etc/ssl/certs/nginx.crt \
         -subj "/C=US/ST=WA/L=Seattle/CN=example.com/emailAddress=deebendu.kumar@zestic.in"
 
-RUN sudo openssl dhparam \
+RUN openssl dhparam \
       -out /etc/ssl/certs/nginx.pem 2048
 
 # Copy the Nginx config
