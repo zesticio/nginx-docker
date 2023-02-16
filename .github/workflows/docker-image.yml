@@ -22,7 +22,7 @@ jobs:
 
       - name: Docker metadata
         id: metadata
-        uses: docker/metadata.action@v4
+        uses: docker/metadata-action@v4
         with:
           images: 'nginx'
           tags: |
