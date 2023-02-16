@@ -5,7 +5,7 @@ MAINTAINER Deebendu Kumar <deebendu.kumar@zestc.io>
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install --no-install-recommends --no-install-suggests gnupg1 apt-transport-https ca-certificates
 RUN apt-get -yqq --no-install-recommends install nginx wget tar curl \
-            && mkdir tmp && chmod 777 tmp \
+            && chmod 777 tmp \
             && rm -rf /var/lib/apt/lists/* \
             && rm -f /etc/nginx/sites-enabled/default
 RUN apt-get -y install curl vim
@@ -40,4 +40,4 @@ COPY ./ssl-params.conf /etc/nginx/ssl-params.conf
 # Expose the port for access
 EXPOSE 80 443
 
-CMD nginx -g 'daemon off;' 
+CMD nginx -g 'daemon off;'
