@@ -23,13 +23,15 @@ RUN apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y
 RUN rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 RUN echo "We can create a self-signed key and certificate pair with OpenSSL in a single command"
-RUN sudo openssl req -x509 -nodes \
-      -days 365 \
-      -subj "/C=CA/ST=QC/O=Zestic, Inc./CN=zestic.io" \
-      -addext "subjectAltName=DNS:zestic.io" \
-      -newkey rsa:2048 \
-      -keyout /etc/ssl/private/nginx.key \
-      -out /etc/ssl/certs/nginx.crt
+RUN sudo openssl req \
+        -newkey rsa:4096 \
+        -x509 \
+        -nodes \
+        -keyout /etc/ssl/private/nginx.key \
+        -days 3650 \
+        -out /etc/ssl/certs/nginx.crt \
+        -subj "/C=US/ST=WA/L=Seattle/CN=example.com/emailAddress=deebendu.kumar@zestic.in"
+
 RUN sudo openssl dhparam \
       -out /etc/ssl/certs/nginx.pem 2048
 
