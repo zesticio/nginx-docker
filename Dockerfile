@@ -27,7 +27,7 @@ RUN openssl dhparam \
       -out /etc/ssl/certs/nginx.pem 2048
 
 # Copy the Nginx config
-ADD ./html.zip /usr/share/nginx/html
+COPY ./html /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./mime.types /etc/nginx/mime.types
 COPY ./conf.d /etc/nginx/conf.d
