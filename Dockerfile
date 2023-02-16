@@ -5,7 +5,7 @@ MAINTAINER Deebendu Kumar <deebendu.kumar@zestc.io>
 RUN apt-get -y update
 RUN apt-get -y dist-upgrade
 RUN apt-get -y install --no-install-recommends --no-install-suggests gnupg1 apt-transport-https ca-certificates
-RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
+#RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 #RUN echo "deb http://nginx.org/packages/mainline/debian/ stretch nginx" >> /etc/apt/sources.list
 RUN apt-get install --no-install-recommends --no-install-suggests -y \
                                                 nginx-module-xslt \
