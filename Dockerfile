@@ -16,7 +16,7 @@ RUN apt-get -y install --no-install-recommends --no-install-suggests gnupg1 apt-
 RUN apt-get -y install nginx curl vim
 RUN apt-get -y install openssl
 RUN apt-get update -y
-RUN rm /etc/nginx/conf.d/default.conf
+#RUN rm /etc/nginx/conf.d/default.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN apt-get clean -y && apt-get autoclean -y && apt-get autoremove -y
