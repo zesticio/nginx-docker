@@ -1,9 +1,8 @@
-FROM nginx
+FROM nginx:latest
 MAINTAINER Deebendu Kumar <deebendu.kumar@zestc.io>
 
 # Install Nginx
-RUN apt-get -y update
-RUN apt-get -y dist-upgrade
+RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install --no-install-recommends --no-install-suggests gnupg1 apt-transport-https ca-certificates
 RUN apt-get -y install curl vim
 RUN apt-get -y install openssl
