@@ -1,0 +1,1 @@
+docker build . -t zesticio/nginx:latest -t zesticio/nginx:1.0.0
