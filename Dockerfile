@@ -25,10 +25,7 @@ RUN openssl dhparam \
 # Copy the Nginx config
 COPY ./html /var/www/html
 #COPY ./nginx.conf /etc/nginx/nginx.conf
-#COPY ./mime.types /etc/nginx/mime.types
-#COPY ./conf.d /etc/nginx/conf.d
-#COPY ./site.conf.d /etc/nginx/site.conf.d
-#COPY ./sites.d /etc/nginx/sites.d
+COPY ./mime.types /etc/nginx/mime.types
 COPY ./default.conf /etc/nginx/sites-available/default.conf
 COPY ./certificates.conf /etc/nginx/certificates.conf
 COPY ./ssl-params.conf /etc/nginx/ssl-params.conf
