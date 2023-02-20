@@ -1,1 +1,1 @@
-docker run -d -p 80:80 zesticio/nginx
+docker run -d -p 443:443 zesticio/nginx
