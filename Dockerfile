@@ -28,7 +28,7 @@ RUN apt-get -y install \
 RUN mkdir /var/log/nginx \
                     && mkdir /etc/nginx \
                     && cd ~ \
-                    && git clone https://github.com/nginx/nginx.git \
+                    && git clone https://github.com/zesticio/nginx.git \
                     && cd nginx \
                     && ./configure \
                         --with-http_ssl_module \
