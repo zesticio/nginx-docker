@@ -1,4 +1,4 @@
-FROM alpine
+FROM ubuntu:latest
 MAINTAINER Deebendu Kumar <deebendu.kumar@zestc.io>
 
 # Install Nginx
